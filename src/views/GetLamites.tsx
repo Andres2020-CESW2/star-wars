@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { DataLaminates, Packets } from "../models/DataModel";
+import { DataLaminates } from "../models/DataModel";
 
 export const GetLamites = ({
   setCounter,
