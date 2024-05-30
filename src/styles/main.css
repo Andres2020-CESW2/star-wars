@@ -1,5 +1,22 @@
 /* Globals styles in this file */
 
+.wrapper-main {
+  max-width: max-content;
+  margin: auto;
+
+  @media (max-width: 998px) {
+    max-width: 95%;
+  }
+}
+
+.wrappe-lamites {
+  overflow-x: hidden;
+  @media (max-width: 662px) {
+    height: 600px;
+    overflow-y: auto; 
+  }
+}
+
 .background-image {
     background-image: url('../assets/images/bg-main.webp');
     background-size: cover;
@@ -22,11 +39,48 @@
     background-color: rgba(0, 0, 0, 0.6);
   }
 
+  .card {
+    width: 18rem;
+    height: 161px;
+  }
+
+  .wrapper-container {
+    width: 1188px;
+    margin: auto;
+
+    @media (max-width: 1230px) {
+      width: 95%;
+    }
+  }
+
+  .wrapper-cards {
+    width: 1188px;
+    margin: auto;
+
+    @media (max-width: 1230px) {
+      width: 888px;
+    }
+
+    @media (max-width: 998px) {
+      width: 589px;
+    }
+
+    @media (max-width: 663px) {
+      width: 287px;
+    }
+  }
+
   .container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  /* .container-cards {
     display: grid;
     grid-template-columns: repeat(4,minmax(0,1fr));
     gap: 3rem;
     min-height: 195px;
-  }
+  } */
 
   

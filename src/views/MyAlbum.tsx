@@ -4,7 +4,7 @@ import { Ships } from "../components/myAlbum/Ships";
 
 export const MyAlbum = () => {
   return (
-    <div className="container">
+    <div className="wrapper-main">
       <div className="z-1 position-relative">
         <h6 className="text-danger">Instrucciones:</h6>
         <p className="text-white">

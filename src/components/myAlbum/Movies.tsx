@@ -14,9 +14,15 @@ export const Movies = () => {
         .then((response) => response.json())
         .then((data) => {
           window.localStorage.setItem(
-            'Movies',
+            "Movies",
             JSON.stringify(
-              Array.from({ length: data.count }, (_, i) => ({ id: i + 1, page: 0, category: 'Especial', type: 'Movies', isEmpty: true}))
+              Array.from({ length: data.count }, (_, i) => ({
+                id: i + 1,
+                page: 0,
+                category: "Especial",
+                type: "Movies",
+                isEmpty: true,
+              }))
             )
           );
           setLoading(false);
@@ -26,9 +32,8 @@ export const Movies = () => {
     }
   }, []);
 
-
   return (
-    <div className="container z-1 position-relative">
+    <div className="wrapper-container z-1 position-relative">
       <h2 className="text-warning">Movies</h2>
       <div className="d-flex justify-content-center">
         {loading && (
@@ -37,15 +42,15 @@ export const Movies = () => {
           </div>
         )}
       </div>
-      <div className="container-cards">
-        {(getData() as DataLaminates[])?.map((item, index) => (
-          <div
-            key={index}
-            className="card col-md-4 v my-2"
-            style={{ width: "18rem" }}
-          >
-            <div className="card-body">
-            {item.name ? (
+      <div className="wrapper-cards">
+        <div className="container-cards">
+          {(getData() as DataLaminates[])?.map((item, index) => (
+            <div
+              key={index}
+              className="card col-md-4 v my-2"
+            >
+              <div className="card-body">
+                {item.name ? (
                   <h5 className="card-title">{item.category}</h5>
                 ) : undefined}
                 {item.name ? (
@@ -56,14 +61,15 @@ export const Movies = () => {
                 <h6 className="card-subtitle mb-2 text-body-secondary">
                   {item.id}
                 </h6>
-              {item.name ? (
-                <a href="#" className="card-link">
-                  Ver detalles
-                </a>
-              ) : undefined}
+                {item.name ? (
+                  <a href="#" className="card-link">
+                    Ver detalles
+                  </a>
+                ) : undefined}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

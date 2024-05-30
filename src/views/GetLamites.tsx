@@ -192,7 +192,7 @@ export const GetLamites = ({
   };
 
   return (
-    <div className="container z-1 position-relative vh-100">
+    <div className="wrapper-container z-1 position-relative vh-100">
       <div className="container d-flex justify-content-center gap-5">
         {packets.map((item, index) => (
           <div key={index} className="w-25 h-25">
@@ -206,14 +206,15 @@ export const GetLamites = ({
           </div>
         ))}
       </div>
-      <div className="container">
+      <div className="container wrappe-lamites">
         <h2 className="text-warning text-center mt-4">Open envelope laminates:</h2>
+
+        <div className="wrapper-cards">
         <div className="container-cards">
           {currentLaminates?.map((item, i) => (
             <div
               key={i}
               className="card col-md-4 v my-2"
-              style={{ width: "18rem" }}
             >
               <div className="card-body">
                 <h5 className="card-title">{item.category}</h5>
@@ -230,6 +231,7 @@ export const GetLamites = ({
               </div>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </div>

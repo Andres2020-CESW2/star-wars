@@ -47,7 +47,7 @@ export const Characters = () => {
   };
 
   return (
-    <div className="container z-1 position-relative">
+    <div className="wrapper-container z-1 position-relative">
       <h2 className="text-warning">Characters:</h2>
       <div className="d-flex justify-content-center">
         {loading && (
@@ -56,13 +56,13 @@ export const Characters = () => {
           </div>
         )}
       </div>
+      <div className="wrapper-cards">
       <div className="container-cards">
         {(getData() as DataLaminates[])?.map((item, index) =>
           currentPage === item.page ? (
             <div
               key={index}
               className="card col-md-4 v my-2"
-              style={{ width: "18rem" }}
             >
               <div className="card-body">
                 {item.name ? (
@@ -85,6 +85,7 @@ export const Characters = () => {
             </div>
           ) : undefined
         )}
+      </div>
       </div>
       <ReactPaginate
         previousLabel={"«"}
