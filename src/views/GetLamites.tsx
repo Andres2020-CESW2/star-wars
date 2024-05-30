@@ -1,12 +1,8 @@
 import { DataLaminates } from "../models/DataModel";
+import { useAppContext } from '../context/AppContext';
 
-export const GetLamites = ({
-  setCounter,
-  currentLaminates,
-  setCurrentLaminates,
-  packets,
-  setPackets
-}) => {
+export const GetLamites = () => {
+  const { setCounter, currentLaminates, setCurrentLaminates, packets, setPackets } = useAppContext();
 
   const openPackets = (index: number) => {
     configConsultV1();
